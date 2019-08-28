@@ -4,6 +4,22 @@
     text-align: right;
 }
  
+.slider .caption{
+    position: absolute;
+    z-index: 100;
+    top: 100px;
+    left: 100px;
+}
 
-    
+.slider .slick-slide{
+    position: relative;
+}
+.slick-dots {
+    position: absolute;
+    right: 30px;
+    bottom: 0px;
+}  
 
+.slick-dots li{
+    display: inline;
+}
