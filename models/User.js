@@ -20,6 +20,18 @@ module.exports = function(sequelize, DataTypes) {
           validate: {
               len: [3, 15]
           }
+      },
+      basketball: {
+          type: DataTypes.STRING
+      },
+      football: {
+          type: DataTypes.STRING
+      },
+      soccer: {
+          type: DataTypes.STRING
+      },
+      baseball: {
+          type: DataTypes.STRING
       }
     });
 

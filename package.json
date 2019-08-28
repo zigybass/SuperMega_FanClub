@@ -8,7 +8,9 @@
     "mysql2": "^1.7.0",
     "sequelize": "^5.17.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
