@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "B@ssghost77",
-    "database": "sports",
+    "password": null,
+    "database": "db_fan",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
