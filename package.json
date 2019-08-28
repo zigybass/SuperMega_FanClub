@@ -1,0 +1,23 @@
+{
+  "name": "gtbc_project_2",
+  "version": "1.0.0",
+  "description": "* Max Coursey\r     * Balwinder Singh\r     * Chris Zeigler\r     * Coti Garcia",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxwellmadewell/GTBC_Project_2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxwellmadewell/GTBC_Project_2/issues"
+  },
+  "homepage": "https://github.com/maxwellmadewell/GTBC_Project_2#readme",
+  "dependencies": {
+    "sequelize": "^5.17.0"
+  }
+}
