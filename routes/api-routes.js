@@ -14,7 +14,8 @@ module.exports = function (app, anything) {
     //Get all teams by league======================================================================
     app.get("/api/:league", function (req, res) {
         const userLeague = req.params.league;
-        const queryLeague = "https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=English%20Premier%20League" + userLeague;
+        const queryLe
+        ague = "https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=English%20Premier%20League" + userLeague;
 
         axios.get({
             url: queryLeague,

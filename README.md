@@ -1,56 +1,47 @@
-# GTBC_Project_2
 
-# App Overview
+# Super Mega Fun Fan Club, EX
 
-# Getting Started
+## Group Orange Team Members
+- Balwinder Singh
+- Coti Garcia
+- Chris Zeigler
+- Max Coursey
 
-# Authors
-    * Max Coursey
-    * Balwinder Singh
-    * Chris Zeigler
-    * Coti Garcia
+## Project Description
+### Overview
+- Sports fan club website allowing personalized selection of sports teams & players. Once a user chooses a selection of teams from various sports
+both national and international, the website populates content based on these selections. Team players, statistics, match results, upcoming events, 
+and historical match data is gathered from a sports database API and aggregated into a specific user's view. Sports ranges from domestic football, 
+soccer, basketball, tennis, baseball, and racing, to international teams in futbol, cricket, F1, etc.  Each user will set up a unique login with 
+password.
 
+### IceBox
+    - To connect the teams and players to a youtube API database to pull in highlight reels of past team games, past events where two teams played
+    each other, and/or player highlight videos and news videos.
+    - User presets from Database are sent to Youtube API to render possible highlights.
+    - User can make "bets": User picks a team to win in the upcoming game.
 
+## Initial User Stories
+    - User creates a log in. Login and password are stored to database. 
+    - Once User is logged in, they can select from dropdowns. These dropdowns list out all American sports teams from Football, Baseball, and Soccer. User can save any of these presets in their profile. 
+    - When User logs back in, data is pulled from Database to load up their presets to the mainpage. Or presets are saved into the corresponding database.
+    - User can delete or add teams to their favorites/profile. 
+    - Database tells SportsDB to deliver team data to the front end. 
+    - Data includes match results, upcoming games, players, any historical data which are all rendered to DOM for User. 
 
-# GT INSTRUCTIONS
+## Sketch of Product
 
-### Requirements
+https://xd.adobe.com/view/bbfce2f6-60ac-4c26-6a51-fdde6df878ce-cdcd/
 
-Your project must:
-
-* Use a Node and Express Web Server;
-* Be backed by a MySQL Database an ORM (not necessarily Sequelize);
-* Have both GET and POST routes for retrieving and adding new data;
-* Be deployed using Heroku (with Data);
-* Utilize at least one new library, package, or technology that we haven’t discussed;
-* Have a polished frontend / UI;
-* Have folder structure that meets MVC Paradigm;
-* Meet good quality coding standards (indentation, scoping, naming).
-* Must not expose sensitive API key information on the server, see [Protecting-API-Keys-In-Node.md](../../../10-nodejs/03-Supplemental/Protecting-API-Keys-In-Node.md)
-
-
-# Overview
-Welcome to Project 2! This is yet another important milestone in your full-stack journey: designing and building your first full-stack web application. You and your team will design and build an app using the MVC paradigm and your own server-side API. You will also continue to add to your professional repertoire with testing, continuous integration and linting tools.
-
-## Key Topics
-* Linting
-* Continuous integration
-* Testing
-
-## Comprehension Check
-You will be employer-ready if you can answer the following questions:
-1. Why is TDD?
-2. What is linting?
-3. What is continuous integration?
-
-## Learning Objectives
-You will be employer-competitive if you are able to:
-* Configure linting and continuous integration with Travis CI.
-* Explain and implement unit tests
-* Design, build and deploy a full-stack web application to Heroku
-
-## Helpful Links
-[Mocha JS Docs](https://mochajs.org/)
-[Chai JS Docs](https://www.chaijs.com/)
-[Agile Methodology](https://en.wikipedia.org/wiki/Agile_software_development)
-
+## Rough Breakdown of Tasks 
+    - WireFrame website
+    - Scaffolding Javascript 
+        - classes/methods
+        - models
+    - API query creation (SportsDB)
+    - HTML file drafts
+    - CSS file drafts
+    - API/HTML Route Requests
+    - mySQL database creation
+    - post request db updates
+    - JSS Method testing

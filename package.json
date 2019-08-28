@@ -1,8 +1,16 @@
 {
-  "name": "gtbc_project_2",
+  "name": "GTBC_Project_2",
   "version": "1.0.0",
-  "description": "* Max Coursey\r     * Balwinder Singh\r     * Chris Zeigler\r     * Coti Garcia",
+  "description": "## Group Orange Team Members - Balwinder Singh - Coti Garcia - Chris Zeigler - Max Coursey",
   "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^1.7.0",
+    "sequelize": "^5.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -11,14 +19,11 @@
     "type": "git",
     "url": "git+https://github.com/maxwellmadewell/GTBC_Project_2.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/maxwellmadewell/GTBC_Project_2/issues"
   },
-  "homepage": "https://github.com/maxwellmadewell/GTBC_Project_2#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "sequelize": "^5.17.0"
-  }
+  "homepage": "https://github.com/maxwellmadewell/GTBC_Project_2#readme"
 }
