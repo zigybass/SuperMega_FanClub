@@ -1,21 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>    
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-    <h1>Home</h1>
-    <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    <div class="container-fluid">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="/">SUPER MEGA FANB CLUB</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                SPORTS
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">NBA</a>
+                                <a class="dropdown-item" href="#">NFL</a>
+                                <a class="dropdown-item" href="#">MLB</a>
+                                <a class="dropdown-item" href="#">MLS</a>
+                            </div>
+                        </li>
+                        <a class="nav-link" href="#">NEXT EVENTS <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">PREVIOUS EVENTS</a>
+                        </li>
+
+                    </ul>
+                    <a href="/login" class="btn btn-outline-success my-2 my-sm-0" type="submit">LOGIN</a>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <div class="container-fluid">
+        <div class="home-slide slider">
+            <div>
+                <img src="http://via.placeholder.com/1500x500">
+                <div class="caption">
+                        <h2>Create an account and personalize your portal</h2>
+                        <a href="/create" class="btn btn-outline-light">Create Account</a>
+                </div>
+            </div>
+            <div>
+                <img src="http://via.placeholder.com/1500x500">
+                <div class="caption">
+                    <h2>Review the last results of NFL</h2>
+                    <a href="/">Create Account</a>
+                </div>   
+            </div>
+            <div>
+                <img src="http://via.placeholder.com/1500x500">
+                <div class="caption">
+                        <h2>Another feature....</h2>
+                        <a href="/">Go!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sports-links" class="container">
+        <h3>Find your favorite team for each sport!</h3>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="sport">
+                   <a href="/sport/football">
+                        <h4>Football</h4>
+                    </a> 
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="sport">
+                        <a href="/sport/soccer">
+                            <h4>Soccer</h4>
+                        </a> 
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="sport">
+                        <a href="/sport/basketball">
+                            <h4>Basketball</h4>
+                        </a> 
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="sport">
+                    <a href="/sport/baseball">
+                            <h4>Beseball</h4>
+                    </a> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="banner" class="container-fluid bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <h3>Make your account here!</h3>
+                    <p>It’s free! You will have all your favorites team information in only one place</p>
+                </div>
+                <div class="col-4">
+                    <a class="btn btn-outline-light" href="/create">CREATE ACCOUNT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="teams" class="container">
+            <h3>You will find you favorites teams here</h3>
+            <div class="teams">
+                    <div>team logo</div>
+                    <div>team logo</div>
+                    <div>team logo</div>
+                    <div>team logo</div>
+                    <div>team logo</div>
+                    <div>team logo</div>
+            </div>
+    </div>
+    <footer></footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- SLICK -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>    
+    
     <script src="js/app.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.home-slide').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                autoplay: true,
+                arrows: false
+            });
+            $('.teams').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 4,
+                autoplay: true,
+                arrows: false
+            });
+        });
+    </script>
 </body>
+
 </html>
