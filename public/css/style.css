@@ -3,6 +3,12 @@
     font-weight: bold;
     text-align: right;
 }
+#userInfo{
+ font-size: 20;
+ font-weight: lighter;
+ margin: 8%  auto;
+ padding: 10px
+}
  
 
     
