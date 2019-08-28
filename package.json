@@ -1,9 +1,10 @@
 {
-  "name": "GTBC_Project_2",
+  "name": "gtbc_project_2",
   "version": "1.0.0",
   "description": "## Group Orange Team Members - Balwinder Singh - Coti Garcia - Chris Zeigler - Max Coursey",
   "main": "server.js",
   "dependencies": {
+    "axios": "^0.19.0",
     "express": "^4.17.1",
     "mysql2": "^1.7.0",
     "sequelize": "^5.17.0"
