@@ -15,7 +15,7 @@ module.exports = function (app, anything) {
     app.get("/api/:league", function (req, res) {
         const userLeague = req.params.league;
         const queryLe
-        ague = "https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=English%20Premier%20League" + userLeague;
+        ague = "https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=" + userLeague;
 
         axios.get({
             url: queryLeague,
