@@ -7,11 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
-<<<<<<< HEAD
-var db = require("../models");
-=======
 const db = require("./models");
->>>>>>> b9aa1eb976631cf55edae25b293045f3df3de62b
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
