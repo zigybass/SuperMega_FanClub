@@ -11,9 +11,9 @@ const axios = require("axios");
 // Routes==========================================================================================
 module.exports = function (app, anything) {
 
-
+    
     //Get all teams by league======================================================================
-    app.get("/api/:league", function (req, res) {
+    app.get("/api/sport/:league", function (req, res) {
         const userLeague = req.params.league;
         const queryLeague = `https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=${userLeague}`;
         console.log(queryLeague);
@@ -27,8 +27,8 @@ module.exports = function (app, anything) {
     //teams[i].strTeam
 
     //Get team info by name========================================================================
-    app.get("/api/:team", function (req, res) {
-        const userTeamName = req.params.team;
+    app.get("/api/team/:name", function (req, res) {
+        const userTeamName = req.params.name;
         const queryTeam = `https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${userTeamName}`;
 
         axios.get(queryTeam).then(function (team) {
@@ -41,8 +41,8 @@ module.exports = function (app, anything) {
 
 
     //Get players by team name query===============================================================
-    app.get("/api/players/:team", function (req, res) {
-        const userTeam = req.params.team;
+    app.get("/api/team/:name/players", function (req, res) {
+        const userTeam = req.params.name;
         const queryTeamPlayers = `https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${userTeam}`;
 
         axios.get(queryTeamPlayers).then(function (teamPlayers) {
@@ -51,7 +51,7 @@ module.exports = function (app, anything) {
     });
 
     //Get next 5 events by Team ID=================================================================
-    app.get("/api/teamNext5Events/:teamId", function (req, res) {
+    app.get("/api/team/:teamId/nextevents", function (req, res) {
         const userTeamId = req.params.teamId;
         const queryTeamId = `https://www.thesportsdb.com/api/v1/json/1/eventsnext.php?id=${userTeamId}`;
 
@@ -61,7 +61,7 @@ module.exports = function (app, anything) {
     });
 
     //Get last 5 events by Team ID=================================================================
-    app.get("/api/teamLast5Events/:teamId", function (req, res) {
+    app.get("/api/team/:teamId/lastevents/", function (req, res) {
         const userTeamId = req.params.teamId;
         const queryTeamId = `https://www.thesportsdb.com/api/v1/json/1/eventslast.php?id=${userTeamId}`;
 
@@ -71,7 +71,7 @@ module.exports = function (app, anything) {
     });
 
     //Get next 15 events by League ID=================================================================
-    app.get("/api/leagueNext15Events/:leagueId", function (req, res) {
+    app.get("/api/sport/:leagueId/nextevents", function (req, res) {
         const userLeagueId = req.params.leagueId;
         const queryLeagueId = `https://www.thesportsdb.com/api/v1/json/1/eventsnextleague.php?id=${userLeagueId}`;
 
