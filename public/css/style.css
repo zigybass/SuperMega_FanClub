@@ -40,6 +40,10 @@
     margin-top: 20px;
 }
 
+.matchCarousel {
+    text-align: center;
+}
+
 #matchSelect {
     display: inline-block;
     float: right;
