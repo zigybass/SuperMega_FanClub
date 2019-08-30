@@ -106,11 +106,19 @@ module.exports = function (app, anything) {
     //sports[i].strSport for i=0 to length
 
     //Get all leagues query========================================================================
+    // app.get("/api/leagues", function (req, res) {
+    //     axios.get("https://www.thesportsdb.com/api/v1/json/1/all_leagues.php").then(function (allLeagues) {
+    //         res.json(allLeagues.data);
+    //     });
+    // });
     app.get("/api/leagues", function (req, res) {
-        axios.get("https://www.thesportsdb.com/api/v1/json/1/all_leagues.php").then(function (allLeagues) {
-            res.json(allLeagues.data);
+        axios.get("https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=4391").then(function (allTeams) {
+            res.json(allTeams.data);
         });
     });
+
+
+
     //leagues[i].idLeague for i=0 to length
     //leagues[i].strLeague for i=0 to length
 

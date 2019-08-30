@@ -94,8 +94,28 @@ img{
 }
 .sport{
     border: solid thin #ccc;
-    height: 100px;
+    position: relative;
     text-align: center;
+    margin-bottom: 30px;
+}
+
+.sport img{
+    width: 100%;
+}
+
+.sport a:hover img{
+ opacity: 0.5;
+}
+
+.sport h4{
+    position: absolute;
+    text-align: center;
+    right: 0;
+    left: 0;
+    top:45%;    
+    text-shadow: #ccc;
+    color: white;
+    font-size: 45px;
 }
 
 #banner{
