@@ -62,8 +62,8 @@
     <div class="row">
         <div class="col">
             <div class="jumbotron jumbotron-fluid">
-                <h2 id="sportJumboLabel">FOOTBALL</h2>
-                <p id="jumboTag">SPORT / FOOTBALL</p>
+                <h2 id="sportJumboLabel" class="sport-name"></h2>
+                <p id="jumboTag">SPORT / <span class="sport-name"></span></p>
             </div>
         </div>
     </div>
@@ -74,24 +74,24 @@
                 <div id="latestResults" class="jumbotron">
                     <div id="latestRow" class="row">
                         <h4>Latest Results</h4>
+                        <h3 id="match-title"></h3>
+                        <h6 id="match-date"></h6>
                     </div>
                     <div class="row">
-                        <div class="col">
-                            <img src="" alt="homePic" class="homeTeamPic">
+                        <div id="homeTeam" class="col">
                         </div>
                         <div class="col">
-                            <div id="homeScore">27</div>
-                            <div class="winLoss">WIN</div>
+                            <div id="homeScore"></div>
+                            <!--<div class="winLoss">WIN</div>-->
                         </div>
                         <div class="col">
                             <div class="vl"></div>
                         </div>
                         <div class="col">
-                            <div id="awayScore">21</div>
-                            <div class="winLoss">LOSS</div>
+                            <div id="awayScore"></div>
+                           <!-- <div class="winLoss">LOSS</div>-->
                         </div>
-                        <div class="col">
-                            <img src="" alt="awayPic" class="awayTeamPic">
+                        <div id="awayTeam" class="col">
                         </div>
                     </div>
                 </div>
@@ -104,10 +104,7 @@
             <div class="jumbotron jumbotron-fluid">
                 <h4 id="jumboMatchSched">Match Schedule</h4>
                         <!-- Add Slick Carousel Here -->
-                        <div class="matchCarousel">
-                            <div>Match One</div>
-                            <div>Match Two</div>
-                            <div>Match Three</div>
+                        <div id="nextMatches">
                         </div>
                 
             </div>
@@ -126,16 +123,10 @@
     <!-- SLICK -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>    
     
-    <script src="js/app.js"></script>
+    <script src="js/sport.js"></script>
 
 
     <script>
-
-        $(document).ready(function () {
-            $('.matchCarousel').slick({
-                arrows: true
-            });
-        });
 
     </script>
 </body>

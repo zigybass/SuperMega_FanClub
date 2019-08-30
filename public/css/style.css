@@ -1,3 +1,7 @@
+img{
+    max-width: 100%;
+}
+
 .navbar-brand{
     font-size: 35px;
     font-weight: bold;
@@ -99,4 +103,8 @@ footer{
 
 #teams{
     margin-bottom: 50px;
+}
+
+#latestResults h2, #latestResults h3, #latestResults h4{
+    width: 100%;
 }
