@@ -127,6 +127,5 @@ module.exports = function (app, anything) {
             res.json(newUser);
             console.log(newUser)
         })
-        res.sendFile( path.join(__dirname, "../public/userPortal.html"))
     })
 };

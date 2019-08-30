@@ -24,20 +24,20 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li>
-                    <a class="nav-link" href="#">NBA <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li>
-                    <a class="nav-link" href="#">NFL <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li>
-                    <a class="nav-link" href="#">MLB <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li>
-                    <a class="nav-link" href="#">MLS <span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="/sport?league=NBA">NBA <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/sport?league=NFL">NFL <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/sport?league=MLB">MLB <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/sport?league=MLS">MLS <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
           <form class="form-inline my-2 my-lg-0">
 
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">LOGIN</button>
@@ -54,7 +54,7 @@
 
 
   <div class="container">
-    <form action="/user" method="POST">
+    <form method="POST">
       <h1>Create Account</h1>
       <div class="form-group">
         <label for="nameInput">Name</label>
