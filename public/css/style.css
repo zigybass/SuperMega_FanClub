@@ -1,3 +1,11 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-brand{
+    font-family: 'Anton', sans-serif;
+}
+
 img{
     max-width: 100%;
 }
@@ -107,4 +115,32 @@ footer{
 
 #latestResults h2, #latestResults h3, #latestResults h4{
     width: 100%;
+}
+
+.matches{
+    padding: 40px 0;
+}
+.match-detail{
+    background: #fff;
+    margin: 15px;
+    padding: 15px;
+}
+
+.match-detail .logos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px
+}
+.match-detail p{
+    margin-bottom: 0;
+}
+
+.match-detail .home,
+.match-detail .away{
+    width: 40%;
+}
+
+.match-detail .vs {
+    width: 20%;
 }

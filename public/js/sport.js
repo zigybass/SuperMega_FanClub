@@ -22,6 +22,7 @@ $(document).ready(function(){
           title = "Soccer"
           break;  
     }
+    $(".sport-name").text(title);    
     
     const teamsList = []
     $.get(`/api/sport/${id}/teams`).then(function(data){
@@ -86,14 +87,12 @@ $(document).ready(function(){
                 <div class="logos">
                   <div class="home">
                     <img src="${dataAwayTeam.logo}">
-                    <p>${dataAwayTeam.name}</p>
                   </div>
                   <div class="vs">
                       VS
                   </div>
                   <div class="away">
                     <img src="${dataHomeTeam.logo}">
-                    <p>${dataHomeTeam.name}</p>
                   </div>
                 </div>
                 <p>${element.strEvent}</p>
@@ -102,7 +101,6 @@ $(document).ready(function(){
             </div>
           `)
         }); 
-        
         $('#nextMatches').slick({
           dots: true,
           infinite: true,
@@ -113,35 +111,5 @@ $(document).ready(function(){
 
       })
     }
-
-
-    $(".sport-name").text(title);    
-  
-
-
-
-    // const data = [
-    //     {
-    //       team: 'Braves',
-    //       logo: 'url'
-    //     },
-    //     {
-    //       team: 'Mets',
-    //       logo: 'url'
-    //     },
-    //     {
-    //       team: 'Giants',
-    //       logo: 'url'
-    //     }
-    //   ]
-      
-    //   const team = 'Mets';
-      
-    //   const result = data.find(obj => {
-    //     return obj.team === team;
-    //   });
-      
-    //   console.log(result);
-
       
 })//document.ready
