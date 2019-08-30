@@ -8,11 +8,11 @@ module.exports = function(sequelize, DataTypes) {
           is: ["^[a-z]+$",'i']
         }
       },
-      email: {
+      username: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-            isEmail: true
+            len: [3]
         }
       },
       password: {
@@ -27,10 +27,10 @@ module.exports = function(sequelize, DataTypes) {
       football: {
           type: DataTypes.STRING
       },
-      soccer: {
+      baseball: {
           type: DataTypes.STRING
       },
-      baseball: {
+      soccer: {
           type: DataTypes.STRING
       }
     });

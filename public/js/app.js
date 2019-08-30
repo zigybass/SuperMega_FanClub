@@ -25,4 +25,38 @@ $(document).ready(function(){
    
     // Output data to your html
 
-})//document.ready
+    // Build New User data for DB
+       let nameInput = $("#nameInput")
+       let userNameInput = $("#usernameInput")
+       let passwordInput = $("#passwordInput")
+       let favNbaInput = $("#favNba")
+        let favNflInput = $("#favNfl")
+        let favMlbInput = $("#favMlb")
+        let favMlsInput = $("#favMls")       
+
+    // Send new User data to backend to store in DB
+    $("#createUser").on("click", function (e) {
+        e.preventDefault();
+        const newUser = {
+            name: nameInput.val().trim(),
+            username: userNameInput.val().trim(),
+            password: passwordInput.val().trim(),
+            basketball: favNbaInput.val(),
+            football: favNflInput.val(),
+            baseball: favMlbInput.val(),
+            soccer: favMlsInput.val()      
+         }
+        submitUser(newUser);
+        console.log(newUser)
+    })
+
+    function submitUser (user) {
+        $.post("/api/createUser", user, function () {
+               console.log(user)
+        })
+    }
+
+        // console.log($("#nameInput").val().trim(), $("#usernameInput").val().trim(), $("#passwordInput").val().trim(), $("#favNba").val().trim())
+    })
+
+//document.ready

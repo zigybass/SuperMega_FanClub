@@ -122,4 +122,10 @@ module.exports = function (app, anything) {
     //leagues[i].idLeague for i=0 to length
     //leagues[i].strLeague for i=0 to length
 
+    app.post("/api/createUser", function (req, res) {
+        db.User.create(req.body).then(function (newUser) {
+            res.json(newUser);
+            console.log(newUser)
+        })
+    })
 };
