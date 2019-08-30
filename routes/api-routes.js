@@ -69,7 +69,6 @@ module.exports = function (app, anything) {
             res.json(teamLast5.data);
         });
     });
-
     //Get next 15 events by League ID=================================================================
     app.get("/api/sport/:leagueId/nextevents", function (req, res) {
         const userLeagueId = req.params.leagueId;
@@ -77,6 +76,22 @@ module.exports = function (app, anything) {
 
         axios.get(queryLeagueId).then(function (leagueNext15) {
             res.json(leagueNext15.data);
+        });
+    });
+    //Get last 15 events by League ID=================================================================
+    app.get("/api/sport/:leagueId/pastevents", function (req, res) {
+        const userLeagueId = req.params.leagueId;
+        const queryLeagueId = `https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=${userLeagueId}`;
+
+        axios.get(queryLeagueId).then(function (leaguePastEvents) {
+            res.json(leaguePastEvents.data);
+        });
+    });
+    app.get("/api/sport/:leagueId/teams", function (req, res) {
+        const leagueId = req.params.leagueId;
+        axios.get(`https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=${leagueId}`).then(function (allTeams) {
+            console.log(allTeams.data)
+            res.json(allTeams.data);
         });
     });
 
@@ -106,4 +121,5 @@ module.exports = function (app, anything) {
 
     //leagues[i].idLeague for i=0 to length
     //leagues[i].strLeague for i=0 to length
+
 };
