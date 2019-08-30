@@ -26,10 +26,10 @@ $(document).ready(function(){
             name: nameInput.val().trim(),
             username: userNameInput.val().trim(),
             password: passwordInput.val().trim(),
-            favNba: favNbaInput.val(),
-            favNfl: favNflInput.val(),
-            favMlb: favMlbInput.val(),
-            favMls: favMlsInput.val()      
+            basketball: favNbaInput.val(),
+            football: favNflInput.val(),
+            baseball: favMlbInput.val(),
+            soccer: favMlsInput.val()      
          }
         submitUser(newUser);
         console.log(newUser)
