@@ -134,9 +134,10 @@ module.exports = function (app, anything) {
             res.json(newUser);
             console.log(newUser)
         })
-    });
+    })
 
-    app.get("/api/user/:id", function (req,res){
+
+    app.get("/api/user/:id", function (req,res) {
         const userId = req.params.id;
         db.User.findOne({ 
             where: {
@@ -146,4 +147,5 @@ module.exports = function (app, anything) {
             console.log(userInfo)
             res.json(userInfo); 
         })
-    });
+    })
+}
