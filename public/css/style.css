@@ -69,15 +69,18 @@ img{
 }
 
 #homeScore, #awayScore {
-    font-size: 35px;
+    font-size: 55px;
     font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .vl {
-    border-left: 3px solid rgb(73, 73, 73);
-    height: 150px;
-    transform: rotate(35deg);
+    border-left: 3px solid rgb(133, 133, 133);
+    height: 200px;
+    transform: rotate(15deg);
     margin-top: 20px;
+    margin-left: 80px;
 }
 
 .matchCarousel {
@@ -110,7 +113,7 @@ img{
     margin-bottom: 30px;
 }
 
-.slider .opacity{
+.opacity{
     position: absolute;
     z-index: 90;
     top: 0px;
@@ -190,7 +193,7 @@ footer{
 }
 
 .matches{
-    padding: 40px 0;
+    padding: 40px 0 80px;
 }
 .match-detail{
     background: #fff;
@@ -206,6 +209,8 @@ footer{
 }
 .match-detail p{
     margin-bottom: 0;
+    font-size: 15px;
+    margin-bottom: 8px;
 }
 
 .match-detail .home,
@@ -215,6 +220,9 @@ footer{
 
 .match-detail .vs {
     width: 20%;
+    font-size: 13px;
+    font-weight: 600;
+    color: #858585;
 }
 
 #sports-links h3{
@@ -225,4 +233,119 @@ footer{
 
 .bg-dark {
     background-color: #385370 !important;
+}
+
+.sport-header .jumbotron-fluid{
+    margin-bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.sport-header .jumbotron-fluid h2{
+    color: #FFF;
+    font-family: 'Anton', sans-serif;
+}
+
+.sport-header .jumbotron-fluid p{
+    color: #FFF;
+}
+.sport-header.Basketball{
+    background: url(../images/slide2.jpg);
+    background-size: cover;
+}
+.sport-header.Football{
+    background: url(../images/football-bg.jpg);
+    background-size: cover;
+}
+
+.sport-header.Soccer{
+    background: url(../images/soccer-bg.jpg);
+    background-size: cover;
+}
+.sport-header.Baseball{
+    background: url(../images/baseball-bg.jpg);
+    background-size: cover;
+}
+
+#latestResults h4 {
+    color:#F73E06;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#latestResults h3{
+    color: #385370;
+}
+
+#latestResults h3 {
+    color: #385370;
+    font-size: 37px;
+    font-weight: 300;
+}
+
+h6#match-date {
+    color: #858585;
+    font-weight: bold;
+}
+
+.matches h4{
+    text-transform: uppercase;
+    color: #385370;
+    margin-bottom: 40px;
+    font-weight: 600;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.matches button.slick-prev.slick-arrow {
+    position: absolute;
+    top: -70px;
+    right: 35px;
+    width: 30px;
+    font-size: 0;
+    height: 30px;
+    border: solid thin #385370;
+    border-radius: 6px;
+    background: transparent;
+}
+
+.matches button.slick-next.slick-arrow {
+    position: absolute;
+    top: -70px;
+    right: 0;
+    width: 30px;
+    font-size: 0;
+    height: 30px;
+    border-radius: 6px;
+    border: solid thin #385370;
+    background: transparent;
+}
+
+ul.slick-dots li button {
+    width: 15px;
+    height: 16px;
+    font-size: 0;
+    border: solid thin #385370;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+ul.slick-dots .slick-active button{
+    background: #385370;
+}
+
+.matches .slick-dots {
+    position: absolute;
+    right: 0px;
+    bottom: -30px;
+}
+
+.match-detail p{
+    color: #385370;
+    font-weight: 600;
+}
+
+.match-detail p.date{
+    color: #858585;
+    font-weight: 300;
 }
