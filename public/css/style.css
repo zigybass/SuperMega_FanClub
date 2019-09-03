@@ -349,3 +349,7 @@ ul.slick-dots .slick-active button{
     color: #858585;
     font-weight: 300;
 }
+
+.section.team-info{
+    padding: 50px 0;
+}
