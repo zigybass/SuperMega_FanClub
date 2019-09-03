@@ -46,6 +46,10 @@ module.exports = function(sequelize, DataTypes) {
     //     }
     //   });
     // };
+
+    User.prototype.validatePassword = function (val) {
+      return this.password === val;
+    }
   
     return User;
   };
