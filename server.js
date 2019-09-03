@@ -9,11 +9,19 @@ const PORT = process.env.PORT || 8080;
 // Requiring our models for syncing
 const db = require("./models");
 
+// Passport init
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static directory to be served
 app.use(express.static("./public"));
+
+// 
+app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+
 
 
 // Routes=========================================================================================
