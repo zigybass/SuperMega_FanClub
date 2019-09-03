@@ -14,7 +14,6 @@
 </head>
 
 <body>
-    <div class="container-fluid">
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="/">SUPER MEGA FAN CLUB</a>
@@ -25,8 +24,8 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
                         <a class="nav-link" href="/sport?league=NBA">NBA <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
@@ -39,32 +38,35 @@
                         <a class="nav-link" href="/sport?league=MLS">MLS <span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
-                    <a href="/login" class="btn btn-outline-success my-2 my-sm-0" type="submit">LOGIN</a>
+                    <a href="/login" class="btn btn-outline-success">LOGIN</a>
                 </div>
             </nav>
         </header>
-    </div>
-    <div class="container-fluid">
+    
+    <div class="container-fluid p-0">
         <div class="home-slide slider">
             <div>
-                <img src="http://via.placeholder.com/1500x500">
+                <img src="./images/slide1.jpg">
+                <div class="opacity"></div>
                 <div class="caption">
                         <h2>Create an account and personalize your portal</h2>
-                        <a href="/create" class="btn btn-outline-light">Create Account</a>
+                        <a href="/create" class="btn btn-lg btn-outline-light">Create Account</a>
                 </div>
             </div>
             <div>
-                <img src="http://via.placeholder.com/1500x500">
+                <img src="./images/slide2.jpg">
+                <div class="opacity"></div>
                 <div class="caption">
-                    <h2>Review the last results of NFL</h2>
-                    <a href="/">Create Account</a>
+                    <h2>Review the last results of NBA</h2>
+                    <a href="/sport?league=NBA" class="btn btn-lg btn-outline-light">Create Account</a>
                 </div>   
             </div>
             <div>
                 <img src="http://via.placeholder.com/1500x500">
+                <div class="opacity"></div>
                 <div class="caption">
                         <h2>Another feature....</h2>
-                        <a href="/">Go!</a>
+                        <a href="/" class="btn btn-lg btn-outline-light">Go!</a>
                 </div>
             </div>
         </div>
@@ -125,7 +127,7 @@
                     <h3>Make your account here!</h3>
                     <p>It’s free! You will have all your favorites team information in only one place</p>
                 </div>
-                <div class="col-4">
+                <div class="col-4 text-right">
                     <a class="btn btn-outline-light" href="/create">CREATE ACCOUNT</a>
                 </div>
             </div>
