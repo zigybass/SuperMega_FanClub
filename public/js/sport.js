@@ -27,16 +27,17 @@ $(document).ready(function(){
     
     const teamsList = []
     $.get(`/api/sport/${id}/teams`).then(function(data){
-      data.teams.forEach(element => {
+      data.forEach(element => {
         let teamBasicInfo = {
-             logo:  element.strTeamBadge,
-             name: element.strTeam
+             logo:  element.logo_url,
+             name: element.team_name
         }
         teamsList.push(teamBasicInfo);
       });  
-      console.log(teamsList);
+      console.log(data);
       getPastEvents();
       getNextEvents();
+      
     })
 
 
