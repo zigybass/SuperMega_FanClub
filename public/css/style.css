@@ -2,18 +2,46 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-.navbar-brand{
-    font-family: 'Anton', sans-serif;
-}
-
 img{
     max-width: 100%;
 }
 
-.navbar-brand{
+.navbar-light .navbar-brand{
+    font-family: 'Anton', sans-serif;
     font-size: 35px;
     font-weight: bold;
     text-align: right;
+    color: #F73E06;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #385370;
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color: #F73E06;
+}
+.navbar-light .navbar-nav{
+    margin-right: 30px;
+}
+.navbar-light .navbar-nav .nav-item{
+    padding-left:20px;
+    padding-right: 20px;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link{
+    color: #385370;
+    font-weight: 700;
+}
+
+.navbar a.btn{
+    background: transparent;
+    border-color: #385370;
+    color: #385370;
+}
+
+.navbar a.btn:hover{
+    background-color: #385370;
+    color: #fff;
 }
 
 #jumboTag {
@@ -71,8 +99,26 @@ img{
 .slider .caption{
     position: absolute;
     z-index: 100;
-    top: 100px;
+    top: 160px;
     left: 100px;
+    right: 100px;
+    color: #fff;
+    text-align: center;
+}
+
+.slider .caption h2{
+    margin-bottom: 30px;
+}
+
+.slider .opacity{
+    position: absolute;
+    z-index: 90;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: #000;
+    opacity: 0.5;
 }
 
 .slider .slick-slide{
@@ -112,20 +158,26 @@ img{
     text-align: center;
     right: 0;
     left: 0;
-    top:45%;    
+    top:40%;    
     text-shadow: #ccc;
     color: white;
     font-size: 45px;
+    font-family: 'Anton', sans-serif;
 }
 
 #banner{
     padding: 50px 0;
     margin-bottom: 50px;
 }
-
+#banner h3{
+    font-weight: 600;
+}
+#banner .btn-outline-light{
+    margin-top: 30px;
+}
 footer{
     height: 30px;
-    background: #000;
+    background: #F73E06;
     color: #fff;
 }
 
@@ -163,4 +215,14 @@ footer{
 
 .match-detail .vs {
     width: 20%;
+}
+
+#sports-links h3{
+    color: #385370;
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.bg-dark {
+    background-color: #385370 !important;
 }
