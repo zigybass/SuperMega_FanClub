@@ -135,4 +135,17 @@ module.exports = function (app, anything) {
             console.log(newUser)
         })
     })
-};
+
+
+    app.get("/api/user/:id", function (req,res) {
+        const userId = req.params.id;
+        db.User.findOne({ 
+            where: {
+                id: userId
+            } 
+        }).then(function(userInfo){
+            console.log(userInfo)
+            res.json(userInfo); 
+        })
+    })
+}
