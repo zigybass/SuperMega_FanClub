@@ -16,7 +16,7 @@
     app.get("/sport", function(req,res){
         res.sendFile( path.join(__dirname, "../public/sport.html"))
     })
-    app.get("/user/"), function(req,res){
+    app.get("/user"), function(req,res){
         res.sendFile( path.join(__dirname, "../public/userPortal.html"))
     }
  }
