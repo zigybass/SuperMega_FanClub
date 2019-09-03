@@ -42,6 +42,7 @@ passport.use(new LocalStrategy(
         }).then(user => {
             if (user) {
                 const valid = user.validatePassword(password);
+                console.log("User found");
 
                 if (valid) return done(null, user);
 

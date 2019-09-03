@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    const User = sequelize.define("User", {
+    const Users = sequelize.define("Users", {
       name: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -35,7 +35,6 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
 
-    console.log("User model created")
   
     // User.associate = function(models) {
     //   // We're saying that a Post should belong to an Author
@@ -47,10 +46,10 @@ module.exports = function(sequelize, DataTypes) {
     //   });
     // };
 
-    User.prototype.validatePassword = function (val) {
+    Users.prototype.validatePassword = function (val) {
       return this.password === val;
     }
   
-    return User;
+    return Users;
   };
   
