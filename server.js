@@ -71,7 +71,8 @@ require("./routes/html-routes.js")(app);
 app.post('/login', 
     passport.authenticate('local', {
         successRedirect: '/',
-        failureRedirect: '/login'
+        failureRedirect: '/login',
+        failureFlash: true
     })
 )
 
