@@ -98,4 +98,11 @@ module.exports = function (app, anything) {
     });
     //leagues[i].idLeague for i=0 to length
     //leagues[i].strLeague for i=0 to length
+
+    app.post("/api/sports", function (req, res) {
+        db.Products.create(req.body).then(function (dbProducts) {
+            res.json(dbProducts);
+        });
+    });
+
 };
