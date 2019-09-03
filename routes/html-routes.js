@@ -16,7 +16,12 @@
     app.get("/sport", function(req,res){
         res.sendFile( path.join(__dirname, "../public/sport.html"))
     })
-    app.get("/user"), function(req,res){
+    app.get("/user", function(req,res){
+        const userId = req.query.id;
+        // if(userID === req.user.id){
+
+        // }
+        console.log(userId);
         res.sendFile( path.join(__dirname, "../public/userPortal.html"))
-    }
+    })
  }
