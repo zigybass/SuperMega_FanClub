@@ -9,7 +9,7 @@ const LocalStrategy = require("passport-local").Strategy;
 // Sets up the Express App=========================================================================
 const app = express();
 const PORT = process.env.PORT || 8080;
-const path = require('path');
+// const path = require('path');
 
 
 // Requiring our models for syncing
@@ -81,7 +81,7 @@ app.post('/login',
 
 
 // Syncing our sequelize models and then starting our Express app=================================
-db.sequelize.sync().then(function () {
+db.sequelize.sync({}).then(function () {
     app.listen(PORT, function () {
         console.log("App listening on PORT " + PORT);
     });

@@ -139,7 +139,7 @@ module.exports = function (app, anything) {
 
     app.get("/api/user/:id", function (req,res) {
         const userId = req.params.id;
-        db.User.findOne({ 
+        db.Users.findOne({ 
             where: {
                 id: userId
             } 
