@@ -1,2 +1,8 @@
-var urlParams = new URLSearchParams(window.location.search);
-const league = urlParams.get("id");
+$(document).ready(function(){
+
+const urlParams = new URLSearchParams(window.location.search);
+const userID = urlParams.get("id");
+
+console.log(userID);
+
+})
