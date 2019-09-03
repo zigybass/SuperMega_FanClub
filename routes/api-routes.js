@@ -87,13 +87,23 @@ module.exports = function (app, anything) {
             res.json(leaguePastEvents.data);
         });
     });
+
     app.get("/api/sport/:leagueId/teams", function (req, res) {
         const leagueId = req.params.leagueId;
-        axios.get(`https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=${leagueId}`).then(function (allTeams) {
-            console.log(allTeams.data)
-            res.json(allTeams.data);
-        });
+        db.Team.findAll({
+            where: {
+                league_id: leagueId
+            }
+        }).then(function(teamInfo) {
+            res.json(teamInfo);
+        })
     });
+
+    //     axios.get(`https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=${leagueId}`).then(function (allTeams) {
+    //         console.log(allTeams.data)
+    //         res.json(allTeams.data);
+    //     });
+    // });
 
     //Get all sports query=========================================================================
     app.get("/api/sports", function (req, res) {
@@ -117,19 +127,8 @@ module.exports = function (app, anything) {
         });
     });
 
-
-
-    //leagues[i].idLeague for i=0 to length
-    //leagues[i].strLeague for i=0 to length
-
-
-//     app.post("/api/sports", function (req, res) {
-//         db.Products.create(req.body).then(function (dbProducts) {
-//             res.json(dbProducts);
-//         });
-//     });
-
     app.post("/api/createUser", function (req, res) {
+
         db.Users.create(req.body).then(function (newUser) {
             res.json(newUser);
             console.log(newUser)
