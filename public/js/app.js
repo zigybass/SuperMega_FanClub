@@ -87,8 +87,9 @@ $(document).ready(function(){
     })
 
     function submitUser (user) {
-        $.post("/api/createUser", user, function () {
-               console.log(user)
+        $.post("/api/createUser", user).then( function (data) {
+               console.log(data)
+               window.location = `/user?id=${data.id}`
         })
     }
 
