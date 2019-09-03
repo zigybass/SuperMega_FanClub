@@ -130,7 +130,7 @@ module.exports = function (app, anything) {
 //     });
 
     app.post("/api/createUser", function (req, res) {
-        db.User.create(req.body).then(function (newUser) {
+        db.Users.create(req.body).then(function (newUser) {
             res.json(newUser);
             console.log(newUser)
         })
@@ -139,7 +139,7 @@ module.exports = function (app, anything) {
 
     app.get("/api/user/:id", function (req,res) {
         const userId = req.params.id;
-        db.User.findOne({ 
+        db.Users.findOne({ 
             where: {
                 id: userId
             } 
