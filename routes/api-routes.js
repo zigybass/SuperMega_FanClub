@@ -128,9 +128,23 @@ module.exports = function (app, anything) {
     });
 
     app.post("/api/createUser", function (req, res) {
-        console.log("approute - createuser start")
+
         db.Users.create(req.body).then(function (newUser) {
             res.json(newUser);
-        });
-    });
-};
+            console.log(newUser)
+        })
+    })
+
+
+    app.get("/api/user/:id", function (req,res) {
+        const userId = req.params.id;
+        db.Users.findOne({ 
+            where: {
+                id: userId
+            } 
+        }).then(function(userInfo){
+            console.log(userInfo)
+            res.json(userInfo); 
+        })
+    })
+}
