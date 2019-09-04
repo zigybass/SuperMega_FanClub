@@ -3,16 +3,30 @@ $(document).ready(function () {
     const urlParams = new URLSearchParams(window.location.search);
     const teamId = urlParams.get("id");
     console.log(teamId);
+    const favoriteTeam = teams.find(obj => {
+        return obj.team_id === parseInt(id); 
+    })
+
+    console.log(favoriteTeam)
+
 
     //get all info for userID from DB
 
     $.get(`/api/team/${teamId}/nextevents`, function (teamEvents) {
-        for (let i = 0; i < 4; i++) {
+        console.log(teamId)
+        console.log(teamEvents)
+        for (let i = 1; i <= 4; i++) {
             $("#upcomingMatches").append(`<li class="list-group-item">${teamEvents.events[i].strEvent}</li>`)
-            console.log(teamEvents.events[i].strEvent)
+            // console.log(teamEvents.events[i].strEvent)
         }
+        const favoriteTeam = teams.find(obj => {
+            return obj.team_id === parseInt(teamId); 
+        })
+        $("#teamLogo").attr("src", favoriteTeam.logo_url)
+        $("#NFLfav").text(favoriteTeam.team_name)
+    
+        console.log(favoriteTeam)
     });
-
 
     $.get(`/api/userplayers/${teamId}`, function (playerData) {
     }).then(function (playerData) {
@@ -24,8 +38,9 @@ $(document).ready(function () {
 
     $.get(`/api/userteam/${teamId}`, function (teamData) {
     }).then(function (teamData) {
+        
         console.log(teamData.teams[0].strDescriptionEN)
-        $("#description").text(teamData.teams[0].strStadiumThumb)
+        $("#description").text(teamData.teams[0].strDescriptionEN)
 
         console.log(teamData.teams[0].strStadiumThumb)
         $("#stadium").append(`<img src="${teamData.teams[0].strStadiumThumb}" class="card-img-top" alt="...">`)
