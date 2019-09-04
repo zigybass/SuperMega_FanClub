@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     $.get(`/api/team/${teamId}/nextevents`, function (teamEvents) {
         for (let i = 0; i < 4; i++) {
-            $("#upcomingMatches").append(`<li>${teamEvents.events[i].strEvent}</li>`)
+            $("#upcomingMatches").append(`<li class="list-group-item">${teamEvents.events[i].strEvent}</li>`)
             console.log(teamEvents.events[i].strEvent)
         }
     });
