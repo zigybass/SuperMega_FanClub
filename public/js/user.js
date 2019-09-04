@@ -2,10 +2,9 @@ $(document).ready(function(){
     const urlParams = new URLSearchParams(window.location.search);
     const userID = urlParams.get("id");
     console.log(userID);
-
+    console.log(teams);
     $.get(`/api/user/${userID}`).then(function(data){
         console.log(data);
-        console.log(data.name);
         const footballId = data.football;
         const basketballId = data.basketball;
         const baseballId = data.baseball;
@@ -22,14 +21,14 @@ $(document).ready(function(){
         nextEvents("MLS", soccerId);
     })
     
-    function nextEvents(league, id){
-        $.get(`/api/user/${league}/${id}/nextevents`).then(function(data){
-            console.log(league);
+    function nextEvents(leagueName, id){
+        $.get(`/api/user/${leagueName}/${id}/nextevents`).then(function(data){
+            console.log(leagueName);
             console.log(data);
             let nextEvent = data.events[0];
-            $(`#card-${league} .card-text`).append(`<span>${nextEvent.strEvent}</span>`)
+            $(`#card-${leagueName} .card-text`).append(`<span>${nextEvent.strEvent}</span>`)
 
-            $(`.future-events-${league}`).append(`
+            $(`.future-events-${leagueName}`).append(`
                 <div class="future-match text-center">
                     <p>${data.events[1].strEvent} <p>
                     <p class="date">${data.events[0].dateEvent}</p>
@@ -47,10 +46,19 @@ $(document).ready(function(){
                     <p class="date">${data.events[0].dateEvent}</p>
                 <div>
             `)
+            const favoriteTeam = teams.find(obj => {
+                return obj.team_id === parseInt(id);
+            });
+            console.log(favoriteTeam);
         })
     }
     
     
-
+function matchID(teamLeague, teamID){
+    const favoriteTeam = league.teamLeague.find(obj => {
+        return obj.team_id === teamID;
+    });
+    console.log(favoriteTeam);
+}
 
 }) // document ready 

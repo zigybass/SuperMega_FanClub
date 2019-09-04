@@ -18,9 +18,6 @@
     })
     app.get("/user", function(req,res){
         const userId = req.query.id;
-        // if(userID === req.user.id){
-
-        // }
         console.log(userId);
         res.sendFile( path.join(__dirname, "../public/userPortal.html"))
     })
