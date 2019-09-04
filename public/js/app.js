@@ -45,40 +45,6 @@ $(document).ready(function () {
     //Query seeded database with each of four league ID and receives teams by league
     //Sends to createTeamRow to create rows for each team in a league
     //Sends to renderTeamList to append each section of league rows to DOM
-    function getTeamWithIDs() {
-        const userLeague = [4387, 4391, 4424, 4346];
-        for (let i = 0; i < userLeague.length; i++) {
-            const teamsToAdd = [];
-            $.get(`api/sport/${userLeague[i]}/teams`, function (data) {
-                console.log(data);
-                for (let j = 0; j < data.length; j++) {
-                    let domElem = "";
-                    switch (userLeague[i]) {
-                        case 4387:
-                            domElem = $("#favNba");
-                            array = teamsNBA
-                            break;
-                        case 4391:
-                            domElem = $("#favNfl");
-                            array = teamsNFL
-                            break;
-                        case 4424:
-                            domElem = $("#favMlb");
-                            array = teamsMLB
-                            break;
-                        case 4346:
-                            domElem = $("#favMls");
-                            array = teamsMLS
-                            break;
-                    }
-                    domElem.append(`<option value=${data[j].team_id}>${data[j].team_name}</option>`);
-                    array.push(data[j])
-                }
-            })
-        }
-
-    };
-
     $("#submitLogin").on("click", function (e) {
         e.preventDefault();
         let userLogin = $("#username1").val().trim();
@@ -122,10 +88,6 @@ $(document).ready(function () {
 
         })
     }
-    $("li").unbind("click").click(function (e) {
-        e.preventDefault()
-        const teamId = $(this).parent().attr("value") //assumes that UL parent will have a value equal to team ID
-        
-    });
+
     // console.log($("#nameInput").val().trim(), $("#usernameInput").val().trim(), $("#passwordInput").val().trim(), $("#favNba").val().trim())
 });//document.ready
