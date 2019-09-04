@@ -53,6 +53,12 @@ $(document).ready(function () {
 
     };
 
+    $("#submitLogin").on("click", function (e) {
+        e.preventDefault();
+        let userLogin = $("#username1").val().trim();
+        submitLog(userLogin)
+    })
+
     // Send new User data to backend to store in DB
     $("#createUser").on("click", function (e) {
         e.preventDefault();
@@ -80,6 +86,24 @@ $(document).ready(function () {
         e.preventDefault()
         const teamId = $(this).parent().attr("value") //assumes that UL parent will have a value equal to team ID
 
+
+    let userId;
+    function submitLog(user) {
+        $.post("/api/login", user).then( function (data) {
+            console.log(data)
+            
+            if (data === null) {
+                return alert("Not a valid username")
+            } else {
+                userId = data.id
+            window.location = `/user?id=${data.id}`
+            }
+
+        })
+    }
+
+    // console.log($("#nameInput").val().trim(), $("#usernameInput").val().trim(), $("#passwordInput").val().trim(), $("#favNba").val().trim())
+})
         $.get(`/api/userplayers/${teamId}`, function (playerData) {
         }).then(function (playerData) {
             for (let i = 0; i < playerData.player.length; i++) {
@@ -93,6 +117,5 @@ $(document).ready(function () {
                 console.log(teamData.teams[0].strStadiumThumb)
         })
     });
-});
     // console.log($("#nameInput").val().trim(), $("#usernameInput").val().trim(), $("#passwordInput").val().trim(), $("#favNba").val().trim())
 //document.ready
