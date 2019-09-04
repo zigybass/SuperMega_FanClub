@@ -11,7 +11,7 @@ const axios = require("axios");
 // Routes==========================================================================================
 module.exports = function (app, anything) {
 
-    
+
     //Get all teams by league======================================================================
     app.get("/api/sport/:league", function (req, res) {
         const userLeague = req.params.league;
@@ -19,34 +19,29 @@ module.exports = function (app, anything) {
         console.log(queryLeague);
 
         axios.get(queryLeague).then(function (league) {
-            console.log
             res.json(league.data);
         });
     });
-    //teams[i].idTeam
-    //teams[i].strTeam
+
 
     //Get team info by name========================================================================
-    app.get("/api/team/:name", function (req, res) {
-        const userTeamName = req.params.name;
-        const queryTeam = `https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${userTeamName}`;
+    app.get("/api/team/:teamId", function (req, res) {
+        const userTeamId = req.params.teamId;
+
+        const queryTeam = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${userTeamId}`;
 
         axios.get(queryTeam).then(function (team) {
             res.json(team.data);
         });
     });
-    //team[1].idTeam - team id
-    //team[1].strTeam - team name
-    //team[1].strSport - sport anem
 
 
     //Get players by team name query===============================================================
-    app.get("/api/team/:name/players", function (req, res) {
-        const userTeam = req.params.name;
-        const queryTeamPlayers = `https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=${userTeam}`;
-
+    app.get("/api/team/:teamId/players", function (req, res) {
+        const userTeamId = req.params.teamId
+        const queryTeamPlayers = `https://www.thesportsdb.com/api/v1/json/1/lookup_all_players.php?id=${userTeamId}`
         axios.get(queryTeamPlayers).then(function (teamPlayers) {
-            res.json(TeamPlayers.data);
+            res.json(teamPlayers.data)
         });
     });
 
@@ -88,16 +83,19 @@ module.exports = function (app, anything) {
         });
     });
 
+
+    //Dynamic menu creation for createAccount.html page==============================================
     app.get("/api/sport/:leagueId/teams", function (req, res) {
         const leagueId = req.params.leagueId;
         db.Team.findAll({
             where: {
                 league_id: leagueId
             }
-        }).then(function(teamInfo) {
+        }).then(function (teamInfo) {
             res.json(teamInfo);
         })
     });
+
 
     app.get("/api/teams", function (req, res) {
         db.Team.findAll({
