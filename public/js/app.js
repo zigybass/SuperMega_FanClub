@@ -93,6 +93,7 @@ $(document).ready(function () {
             }
         })
 
+    }
 });
 // console.log($("#nameInput").val().trim(), $("#usernameInput").val().trim(), $("#passwordInput").val().trim(), $("#favNba").val().trim())
 //document.ready
