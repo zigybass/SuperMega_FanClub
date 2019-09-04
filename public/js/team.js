@@ -29,7 +29,7 @@ $(document).ready(function () {
             return obj.team_id === parseInt(teamId); 
         })
         $("#teamLogo").attr("src", favoriteTeam.logo_url)
-        $("#NFLfav").text(favoriteTeam.team_name)
+        $("#headerLogo").text(favoriteTeam.team_name)
         const awayTeam = teams.find(obj => {
             return obj.team_id === parseInt(nextEvent.awayTeamId);
         });
@@ -68,7 +68,7 @@ $(document).ready(function () {
             console.log(playerData.player[i].strPlayer)
             $("#players").append(`<li>
             <img src="${playerData.player[i].strThumb}">
-            ${playerData.player[i].strPlayer}
+            <span>${playerData.player[i].strPlayer}</span>
             </li>`)
         }
     })
