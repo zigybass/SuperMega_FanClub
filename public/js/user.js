@@ -10,10 +10,6 @@ $(document).ready(function(){
         const baseballId = data.baseball;
         const soccerId = data.soccer;
         $("#userInfo").text(data.name);
-        $("#NFLfav").text(data.football);
-        $("#NBAfav").text(data.basketball);
-        $("#MLBfav").text(data.baseball);
-        $("#MLSfav").text(data.soccer);
 
         nextEvents("NFL", footballId);
         nextEvents("NBA", basketballId);
@@ -27,28 +23,36 @@ $(document).ready(function(){
             console.log(data);
             let nextEvent = data.events[0];
             $(`#card-${leagueName} .card-text`).append(`<span>${nextEvent.strEvent}</span>`)
-
-            $(`.future-events-${leagueName}`).append(`
-                <div class="future-match text-center">
-                    <p>${data.events[1].strEvent} <p>
-                    <p class="date">${data.events[0].dateEvent}</p>
-                </div>
-                <div class="future-match text-center">
-                    <p>${data.events[2].strEvent} <p>
-                    <p class="date">${data.events[0].dateEvent}</p>
-                <div>
-                <div class="future-match text-center">
-                    <p>${data.events[3].strEvent} <p>
-                    <p class="date">${data.events[0].dateEvent}</p>
-                <div>
-                <div class="future-match text-center">
-                    <p>${data.events[4].strEvent} <p>
-                    <p class="date">${data.events[0].dateEvent}</p>
-                <div>
-            `)
+            if(data.events[1] && data.events[2] && data.events[3]){
+                $(`.future-events-${leagueName}`).append(`
+                    <div class="future-match text-center">
+                        <p>${data.events[1].strEvent} <p>
+                        <p class="date">${data.events[0].dateEvent}</p>
+                    </div>
+                    <div class="future-match text-center">
+                        <p>${data.events[2].strEvent} <p>
+                        <p class="date">${data.events[0].dateEvent}</p>
+                    <div>
+                    <div class="future-match text-center">
+                        <p>${data.events[3].strEvent} <p>
+                        <p class="date">${data.events[0].dateEvent}</p>
+                    <div>
+                `)
+             }
+            if(data.events[4]){
+                $(`.future-events-${leagueName}`).append(`
+                    <div class="future-match text-center">
+                        <p>${data.events[3].strEvent} <p>
+                        <p class="date">${data.events[0].dateEvent}</p>
+                     <div>
+                `)  
+            }
             const favoriteTeam = teams.find(obj => {
                 return obj.team_id === parseInt(id);
             });
+            $(`#${leagueName}fav`).text(favoriteTeam.team_name); 
+            $(`#logo-${leagueName}`).attr("src", favoriteTeam.logo_url); 
+            $(`#btn-${leagueName}`).attr("href", `/team?id=${id}`);
             console.log(favoriteTeam);
         })
     }
