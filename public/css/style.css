@@ -353,3 +353,13 @@ ul.slick-dots .slick-active button{
 .section.team-info{
     padding: 50px 0;
 }
+
+.team-info .header img{
+    display: inline-block;
+    width: 200px;
+}
+
+.team-info .header h3{
+    display: inline-block;
+    width: calc(100% -250px);
+}

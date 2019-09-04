@@ -138,7 +138,6 @@ module.exports = function (app, anything) {
     });
 
     app.post("/api/createUser", function (req, res) {
-
         db.Users.create(req.body).then(function (newUser) {
             res.json(newUser);
             console.log(newUser)
@@ -157,6 +156,21 @@ module.exports = function (app, anything) {
         })
     })
 
+    app.post('/api/login', function (req, res) {
+        let loginUsername = Object.keys(req.body)
+        console.log(loginUsername[0])
+        db.Users.findOne({
+            where: {
+              username: loginUsername[0]
+            },
+          }).then(function(dbUser) {
+              console.log(dbUser)
+            res.json(dbUser);
+        })
+        
+        
+
+    })
     app.get("/api/user/:league/:teamID/nextevents", function (req, res) {
         const teamId = req.params.teamID;
         const queryLeagueId = `https://www.thesportsdb.com/api/v1/json/1/eventsnext.php?id=${teamId}`;
