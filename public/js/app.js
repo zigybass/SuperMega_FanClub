@@ -108,6 +108,7 @@ $(document).ready(function () {
         })
     }
     //click function for players of each user selected team
+
     function submitLog(user) {
         $.post("/api/login", user).then( function (data) {
             console.log(data)
