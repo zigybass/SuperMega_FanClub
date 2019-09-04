@@ -30,7 +30,6 @@ function getTeamWithIDs() {
 };
   
 
-
 $(document).ready(function () {
     // Build New User data for DB
     let nameInput = $("#nameInput")
@@ -45,7 +44,6 @@ $(document).ready(function () {
     //Query seeded database with each of four league ID and receives teams by league
     //Sends to createTeamRow to create rows for each team in a league
     //Sends to renderTeamList to append each section of league rows to DOM
-
 
     $("#submitLogin").on("click", function (e) {
         e.preventDefault();
@@ -90,10 +88,6 @@ $(document).ready(function () {
 
         })
     }
-    $("li").unbind("click").click(function (e) {
-        e.preventDefault()
-        const teamId = $(this).parent().attr("value") //assumes that UL parent will have a value equal to team ID
-        
-    });
+
     // console.log($("#nameInput").val().trim(), $("#usernameInput").val().trim(), $("#passwordInput").val().trim(), $("#favNba").val().trim())
 });//document.ready

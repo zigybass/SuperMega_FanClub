@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     const urlParams = new URLSearchParams(window.location.search);
-    const teamId = urlParams.get("teamId");
+    const teamId = urlParams.get("id");
     console.log(teamId);
 
     //get all info for userID from DB
