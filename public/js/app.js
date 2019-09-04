@@ -43,8 +43,6 @@ $(document).ready(function () {
         }
     };
 
-
-
     // Send new User data to backend to store in DB
     $("#createUser").on("click", function (e) {
         e.preventDefault();
@@ -67,8 +65,31 @@ $(document).ready(function () {
             window.location = `/user?id=${data.id}`
         })
     }
+    //click function for players of each user selected team
+    $("li").unbind("click").click(function (e) {
+        e.preventDefault()
+        const queryType = $(this).text().trim()
+        console.log(queryType)
+        const teamId = $(this).parent().attr("value") //assumes that UL parent will have a value equal to team ID
 
+        if (queryType === "Players") {
+            $.get(`/api/team/${teamId}/players`, function (teamData) {
+            }).then(function (playerData) {
+                for (let i = 0; i < playerData.player.length; i++) {
+                    console.log(playerData.player[i].strPlayer)
+                }
+            })
+        } else {
+            console.log(teamId + "else")
+            $.get(`/api/team/${teamId}`, function (teamData) { })
+                .then(function (teamData) {
+                    console.log(teamData.teams[0].strDescriptionEN)
+                    console.log(teamData.teams[0].strStadiumThumb)
+                    
+                })
+
+        }
+    });
+});
     // console.log($("#nameInput").val().trim(), $("#usernameInput").val().trim(), $("#passwordInput").val().trim(), $("#favNba").val().trim())
-})
-
 //document.ready
