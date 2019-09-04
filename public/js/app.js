@@ -30,7 +30,6 @@ function getTeamWithIDs() {
 };
   
 
-
 $(document).ready(function () {
     // Build New User data for DB
     let nameInput = $("#nameInput")
@@ -45,6 +44,7 @@ $(document).ready(function () {
     //Query seeded database with each of four league ID and receives teams by league
     //Sends to createTeamRow to create rows for each team in a league
     //Sends to renderTeamList to append each section of league rows to DOM
+
     $("#submitLogin").on("click", function (e) {
         e.preventDefault();
         let userLogin = $("#username1").val().trim();
