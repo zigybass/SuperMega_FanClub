@@ -10,6 +10,11 @@ $(document).ready(function () {
     let favMlsInput = $("#favMls")
 
     getTeamWithIDs();
+    
+    const teamsNFL = [];
+    const teamsNBA = [];
+    const teamsMLS = [];
+    const teamsMLB = [];
 
     //Query seeded database with each of four league ID and receives teams by league
     //Sends to createTeamRow to create rows for each team in a league
@@ -25,22 +30,27 @@ $(document).ready(function () {
                     switch (userLeague[i]) {
                         case 4387:
                             domElem = $("#favNba");
+                            array = teamsNBA
                             break;
                         case 4391:
                             domElem = $("#favNfl");
-
+                            array = teamsNFL
                             break;
                         case 4424:
                             domElem = $("#favMlb");
+                            array = teamsMLB
                             break;
                         case 4346:
                             domElem = $("#favMls");
+                            array = teamsMLS
                             break;
                     }
                     domElem.append(`<option value=${data[j].team_id}>${data[j].team_name}</option>`);
+                    array.push(data[j])
                 }
             })
         }
+ 
     };
 
     // Send new User data to backend to store in DB

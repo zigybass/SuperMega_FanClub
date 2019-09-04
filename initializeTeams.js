@@ -48,15 +48,6 @@ aggregateTeams().then(function (value) {   ///value should equal the resolved te
             console.log(`\nError:, err`)
         });
     });
-    // for (let i in teamsObjArr) {
-    //     console.log(teamsObjArr[i]);
-    //     db.Team.create({
-    //         team_id: teamsObjArr[i].id,
-    //         team_name: teamsObjArr[i].name,
-    //         sport_name: teamsObjArr[i].sportName,
-    //         league_id: teamsObjArr[i].leagueId
-    //     });
-    // }
 });
 
 

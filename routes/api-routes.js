@@ -96,6 +96,20 @@ module.exports = function (app, anything) {
         })
     });
 
+
+    app.get("/api/teams", function (req, res) {
+        db.Team.findAll({
+        }).then(function(teams) {
+            res.json(teams);
+        })
+    });
+
+    //     axios.get(`https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=${leagueId}`).then(function (allTeams) {
+    //         console.log(allTeams.data)
+    //         res.json(allTeams.data);
+    //     });
+    // });
+
     //Get all sports query=========================================================================
     app.get("/api/sports", function (req, res) {
         axios.get("https://www.thesportsdb.com/api/v1/json/1/all_sports.php#")
@@ -125,8 +139,7 @@ module.exports = function (app, anything) {
             console.log(newUser)
         })
     })
-
-
+    
     app.get("/api/user/:id", function (req,res) {
         const userId = req.params.id;
         db.Users.findOne({ 
@@ -138,4 +151,13 @@ module.exports = function (app, anything) {
             res.json(userInfo); 
         })
     })
+
+    app.get("/api/user/:league/:teamID/nextevents", function (req, res) {
+        const teamId = req.params.teamID;
+        const queryLeagueId = `https://www.thesportsdb.com/api/v1/json/1/eventsnext.php?id=${teamId}`;
+
+        axios.get(queryLeagueId).then(function (leagueNext5) {
+            res.json(leagueNext5.data);
+        });
+    });
 }

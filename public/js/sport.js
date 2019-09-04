@@ -22,20 +22,22 @@ $(document).ready(function(){
           title = "Soccer"
           break;  
     }
-    $(".sport-name").text(title);    
+    $(".sport-name").text(title);
+    $(".sport-header").addClass(title);    
     
     const teamsList = []
     $.get(`/api/sport/${id}/teams`).then(function(data){
-      data.teams.forEach(element => {
+      data.forEach(element => {
         let teamBasicInfo = {
-             logo:  element.strTeamLogo,
-             name: element.strTeam
+             logo:  element.logo_url,
+             name: element.team_name
         }
         teamsList.push(teamBasicInfo);
       });  
-      console.log(teamsList);
+      console.log(data);
       getPastEvents();
       getNextEvents();
+      
     })
 
 
@@ -59,11 +61,9 @@ $(document).ready(function(){
 
           $("#homeTeam").append(`
               <img src="${homeTeam.logo}">
-              <p>${homeTeam.name}</p>
           `);
           $("#awayTeam").append(`
               <img src="${awayTeam.logo}">
-              <p>${awayTeam.name}</p>
           `);
       })
     }
@@ -96,7 +96,7 @@ $(document).ready(function(){
                   </div>
                 </div>
                 <p>${element.strEvent}</p>
-                <p>${element.dateEvent}</p>
+                <p class="date">${element.dateEvent}</p>
               <div>
             </div>
           `)
