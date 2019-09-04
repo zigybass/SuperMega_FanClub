@@ -12,6 +12,24 @@ const axios = require("axios");
 module.exports = function (app, anything) {
 
 
+    //Get team info by name========================================================================
+    app.get("/api/userplayers/:teamId", function (req, res) {
+        const userTeamId = req.params.teamId
+        const queryTeamPlayers = `https://www.thesportsdb.com/api/v1/json/1/lookup_all_players.php?id=${userTeamId}`
+        axios.get(queryTeamPlayers).then(function (teamPlayers) {
+            res.json(teamPlayers.data)
+        });
+    })
+
+    app.get("/api/userteam/:teamId", function (req, res) {
+        const userTeamId = req.params.teamId
+        const queryTeamDetails = `https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${userTeamId}`
+        axios.get(queryTeamDetails).then(function (teamDetails) {
+            res.json(teamDetails.data)
+        });
+
+    })
+
     //Get all teams by league======================================================================
     app.get("/api/sport/:league", function (req, res) {
         const userLeague = req.params.league;
@@ -99,16 +117,11 @@ module.exports = function (app, anything) {
 
     app.get("/api/teams", function (req, res) {
         db.Team.findAll({
-        }).then(function(teams) {
+        }).then(function (teams) {
             res.json(teams);
         })
     });
 
-    //     axios.get(`https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=${leagueId}`).then(function (allTeams) {
-    //         console.log(allTeams.data)
-    //         res.json(allTeams.data);
-    //     });
-    // });
 
     //Get all sports query=========================================================================
     app.get("/api/sports", function (req, res) {
@@ -117,15 +130,7 @@ module.exports = function (app, anything) {
                 res.json(allTeams.data);
             });
     });
-    //sports[i].idSport for i=0 to length
-    //sports[i].strSport for i=0 to length
 
-    //Get all leagues query========================================================================
-    // app.get("/api/leagues", function (req, res) {
-    //     axios.get("https://www.thesportsdb.com/api/v1/json/1/all_leagues.php").then(function (allLeagues) {
-    //         res.json(allLeagues.data);
-    //     });
-    // });
     app.get("/api/leagues", function (req, res) {
         axios.get("https://www.thesportsdb.com/api/v1/json/1/lookup_all_teams.php?id=4391").then(function (allTeams) {
             res.json(allTeams.data);
@@ -139,16 +144,16 @@ module.exports = function (app, anything) {
             console.log(newUser)
         })
     })
-    
-    app.get("/api/user/:id", function (req,res) {
+
+    app.get("/api/user/:id", function (req, res) {
         const userId = req.params.id;
-        db.Users.findOne({ 
+        db.Users.findOne({
             where: {
                 id: userId
-            } 
-        }).then(function(userInfo){
+            }
+        }).then(function (userInfo) {
             console.log(userInfo)
-            res.json(userInfo); 
+            res.json(userInfo);
         })
     })
 
