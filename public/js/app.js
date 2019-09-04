@@ -68,6 +68,27 @@ $(document).ready(function () {
         })
     }
 
+    $("#submitLogin").on("click", function (e) {
+        e.preventDefault();
+        let userLogin = $("#username1").val().trim();
+        submitLog(userLogin)
+    })
+
+    let userId;
+    function submitLog(user) {
+        $.post("/api/login", user).then( function (data) {
+            console.log(data)
+            
+            if (data === null) {
+                return alert("Not a valid username")
+            } else {
+                userId = data.id
+            window.location = `/user?id=${data.id}`
+            }
+
+        })
+    }
+
     // console.log($("#nameInput").val().trim(), $("#usernameInput").val().trim(), $("#passwordInput").val().trim(), $("#favNba").val().trim())
 })
 

@@ -145,4 +145,20 @@ module.exports = function (app, anything) {
             res.json(userInfo); 
         })
     })
+
+    app.post('/api/login', function (req, res) {
+        let loginUsername = Object.keys(req.body)
+        console.log(loginUsername[0])
+        db.Users.findOne({
+            where: {
+              username: loginUsername[0]
+            },
+          }).then(function(dbUser) {
+              console.log(dbUser)
+            res.json(dbUser);
+        })
+        
+        
+
+    })
 }
