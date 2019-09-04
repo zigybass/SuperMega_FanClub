@@ -9,7 +9,7 @@ $(document).ready(function () {
         const basketballId = data.basketball;
         const baseballId = data.baseball;
         const soccerId = data.soccer;
-        $("#userInfo").text(data.name);
+        $("#userInfo").text(`Welcome ${data.name}!`);
 
         nextEvents("NFL", footballId);
         nextEvents("NBA", basketballId);
