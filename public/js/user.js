@@ -9,7 +9,7 @@ $(document).ready(function () {
         const basketballId = data.basketball;
         const baseballId = data.baseball;
         const soccerId = data.soccer;
-        $("#userInfo").text(data.name);
+        $("#userInfo").text(`Welcome ${data.name}!`);
 
         nextEvents("NFL", footballId);
         nextEvents("NBA", basketballId);
@@ -21,29 +21,34 @@ $(document).ready(function () {
         $.get(`/api/user/${leagueName}/${id}/nextevents`).then(function (data) {
             console.log(leagueName);
             console.log(data);
-            let nextEvent = data.events[0];
-            $(`#card-${leagueName} .card-text`).append(`<span>${nextEvent.strEvent}</span>`)
+            let nextEvent = {
+                name: data.events[0].strEvent,
+                date: data.events[0].dateEvent,
+                awayTeamId: data.events[0].idAwayTeam,
+                homeTeamId: data.events[0].idHomeTeam
+            }
+            console.log(nextEvent);
             if (data.events[1] && data.events[2] && data.events[3]) {
                 $(`.future-events-${leagueName}`).append(`
-                    <div class="future-match text-center">
-                        <p>${data.events[1].strEvent} <p>
-                        <p class="date">${data.events[0].dateEvent}</p>
+                    <div class="future-match text-left">
+                        <p>${data.events[1].strEvent} <span class="date">${data.events[1].dateEvent}</span><p>
+                        
                     </div>
-                    <div class="future-match text-center">
-                        <p>${data.events[2].strEvent} <p>
-                        <p class="date">${data.events[0].dateEvent}</p>
+                    <div class="future-match text-left">
+                        <p>${data.events[2].strEvent} <span class="date">${data.events[2].dateEvent}</span><p>
+                        
                     <div>
-                    <div class="future-match text-center">
-                        <p>${data.events[3].strEvent} <p>
-                        <p class="date">${data.events[0].dateEvent}</p>
+                    <div class="future-match text-left">
+                        <p>${data.events[3].strEvent} <span class="date">${data.events[3].dateEvent}</span><p>
+                        
                     <div>
                 `)
             }
             if (data.events[4]) {
                 $(`.future-events-${leagueName}`).append(`
-                    <div class="future-match text-center">
-                        <p>${data.events[3].strEvent} <p>
-                        <p class="date">${data.events[0].dateEvent}</p>
+                    <div class="future-match text-left">
+                        <p>${data.events[3].strEvent} <span class="date">${data.events[4].dateEvent}</span> <p>
+                        
                      <div>
                 `)
             }
@@ -53,7 +58,34 @@ $(document).ready(function () {
             $(`#${leagueName}fav`).text(favoriteTeam.team_name);
             $(`#logo-${leagueName}`).attr("src", favoriteTeam.logo_url);
             $(`#btn-${leagueName}`).attr("href", `/teaminfo?id=${id}`);
-            console.log(favoriteTeam);
+
+            const awayTeam = teams.find(obj => {
+                return obj.team_id === parseInt(nextEvent.awayTeamId);
+            });
+            const homeTeam = teams.find(obj => {
+                return obj.team_id === parseInt(nextEvent.homeTeamId);
+            });
+            console.log(awayTeam)
+            //Next Team
+            $(`.next-event-${leagueName}`).append(`
+                    <div>
+                    <div class="match-detail text-center">
+                        <div class="logos">
+                        <div class="home">
+                            <img src="${homeTeam.logo_url}">
+                        </div>
+                        <div class="vs">
+                            VS
+                        </div>
+                        <div class="away">
+                            <img src="${awayTeam.logo_url}">
+                        </div>
+                        </div>
+                        <p>${nextEvent.name}</p>
+                        <p class="date">${nextEvent.date}</p>
+                    <div>
+                    </div>
+            `)
         })
     }
 

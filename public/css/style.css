@@ -93,10 +93,12 @@ img{
     margin-right: 170px;
 }
 #userInfo{
- font-size: 20;
- font-weight: lighter;
- margin: 8%  auto;
- padding: 10px
+    font-size: 20px;
+    font-weight: lighter;
+    margin: 0 20px;
+    padding: 10px;
+    color: #f73e04;
+    text-transform: uppercase;
 }
  
 .slider .caption{
@@ -239,10 +241,21 @@ footer{
     margin-bottom: 0;
     background: rgba(0,0,0,0.5);
 }
+.main-title{
+    margin-bottom: 50px;
+}
+.main-title .jumbotron-fluid{
+    background: #385370;
+}
 
+.main-title .jumbotron-fluid h2,
 .sport-header .jumbotron-fluid h2{
     color: #FFF;
     font-family: 'Anton', sans-serif;
+}
+
+.login-form{
+    margin-bottom: 50px;
 }
 
 .sport-header .jumbotron-fluid p{
@@ -354,12 +367,121 @@ ul.slick-dots .slick-active button{
     padding: 50px 0;
 }
 
+.team-info .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .team-info .header img{
     display: inline-block;
-    width: 200px;
+    width: 120px;
+    margin-right: 30px;
+    margin-bottom: 20px;
 }
 
 .team-info .header h3{
     display: inline-block;
-    width: calc(100% -250px);
+    width: auto;
+    text-transform: uppercase;
+    color: #385370;
+    font-weight: 700;
 }
+
+
+.team-info ul.nav.justify-content-end {
+    display: inline-block;
+}
+
+.team-info .card{
+    height: 100%;
+}
+
+.team-info .card .card-title{
+    color: #385370;
+    font-family: 'Anton', sans-serif;
+}
+
+.team-info .match-detail img{
+    max-width: 100px
+}
+.form-page footer{
+    margin-top: 50px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #385370;
+    border-color: #385370;
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #F73E06;
+    border-color: #F73E06;
+}
+
+.future-match span.date{
+    color: #858585;
+    border-left: solid thin #858585;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+#teamLogo {
+    display: inline-block;
+    width: 200px;
+}
+
+.infoContain .card{
+    margin-bottom: 30px;
+}
+
+.infoContain .card-header {
+    background: #FFF;
+    color: #385370;
+    font-family: 'Anton', sans-serif;
+    border: none;
+    font-size: 1.25rem;
+}
+
+ul#players {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+#players li {
+    width: 45%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#players li img {
+    width: 100px;
+    border-radius: 50%;
+    margin: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.8);
+}
+
+#players li span {
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+#headerLogo {
+    margin-bottom: 40px;
+    margin: 0px 40px;
+    text-transform: uppercase;
+    color: #385370;
+    font-weight: 700;
+}
+
+.headerTeam {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0px;
+}
+
