@@ -363,3 +363,6 @@ ul.slick-dots .slick-active button{
     display: inline-block;
     width: calc(100% -250px);
 }
+#logos{
+    display: flex;
+}
