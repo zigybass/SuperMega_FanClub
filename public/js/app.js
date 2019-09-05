@@ -117,27 +117,27 @@ $(document).ready(function () {
             console.log(obj.team_name === "Boston Celtics")
             return obj.team_name === "Boston Celtics";
             
-        });
-        const Yankees = teams.find(obj => {
-            console.log(obj.team_name === "New York Yankees")
-            return obj.team_name === "New York Yankees";
+        // });
+        // const Yankees = teams.find(obj => {
+        //     console.log(obj.team_name === "New York Yankees")
+        //     return obj.team_name === "New York Yankees";
             
-        });
-        const RedSox= teams.find(obj => {
-            console.log(obj.team_name === "Boston Red Sox")
-            return obj.team_name === "Boston Red Sox";
+        // });
+        // const RedSox= teams.find(obj => {
+        //     console.log(obj.team_name === "Boston Red Sox")
+        //     return obj.team_name === "Boston Red Sox";
             
-        });
-        const Dodgers = teams.find(obj => {
-            console.log(obj.team_name === "Los Angeles Dodgers")
-            return obj.team_name === "Los Angeles Dodgers";
+        // });
+        // const Dodgers = teams.find(obj => {
+        //     console.log(obj.team_name === "Los Angeles Dodgers")
+        //     return obj.team_name === "Los Angeles Dodgers";
             
-        });
-        const Braves = teams.find(obj => {
-            console.log(obj.team_name === "Atlanta Braves")
-            return obj.team_name === "Atlanta Braves";
+        // });
+        // const Braves = teams.find(obj => {
+        //     console.log(obj.team_name === "Atlanta Braves")
+        //     return obj.team_name === "Atlanta Braves";
             
-        });
+        // });
 
 
         $("#logos").append(`
