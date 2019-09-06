@@ -7,6 +7,7 @@
 // Requiring our models
 const db = require("../models");
 const axios = require("axios");
+const {ensureAuthenticated} = require("../config/auth");
 
 // Routes==========================================================================================
 module.exports = function (app, anything) {
@@ -144,7 +145,7 @@ module.exports = function (app, anything) {
         })
     })
 
-    app.get("/api/user/:id", function (req, res) {
+    app.get("/api/user/:id", ensureAuthenticated, function (req, res) {
         const userId = req.params.id;
         db.Users.findOne({
             where: {

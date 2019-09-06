@@ -45,11 +45,11 @@ $(document).ready(function () {
     //Sends to createTeamRow to create rows for each team in a league
     //Sends to renderTeamList to append each section of league rows to DOM
 
-    $("#submitLogin").on("click", function (e) {
-        e.preventDefault();
-        let userLogin = $("#username1").val().trim();
-        submitLog(userLogin)
-    })
+    // $("#submitLogin").on("click", function (e) {
+    //     e.preventDefault();
+    //     let userLogin = $("#username1").val().trim();
+    //     submitLog(userLogin)
+    // })
 
     // Send new User data to backend to store in DB
     $("#createUser").on("click", function (e) {

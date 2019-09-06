@@ -4,6 +4,7 @@ const path = require("path");
 const passport = require("passport")
 const session = require("express-session");
 const LocalStrategy = require("passport-local").Strategy;
+const {ensureAuthenticated} = require("../GTBC_Project_2/config/auth");
 
 
 // Sets up the Express App=========================================================================
@@ -35,8 +36,8 @@ app.use(express.static("./public"));
 // //
 passport.use(new LocalStrategy(
     function (username, password, done) {
-
-        User.findOne({
+        
+        db.Users.findOne({
             where: {
                 username: username
             }
@@ -56,6 +57,7 @@ passport.use(new LocalStrategy(
 ))
 
 passport.serializeUser( function (user, done) {
+    console.log("serialize");
     console.log(user);
     done(null, user);
 });
@@ -70,14 +72,17 @@ passport.deserializeUser( function (user, done) {
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
-app.post('/login', 
+app.post('/login',
     passport.authenticate('local', {
         successRedirect: '/',
         failureRedirect: '/login',
-        failureFlash: true
     })
 )
 
+app.get("/logout", function (req, res) {
+    req.logout();
+    res.redirect("/login")
+})
 
 // Syncing our sequelize models and then starting our Express app=================================
 db.sequelize.sync({}).then(function () {
