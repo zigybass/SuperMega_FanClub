@@ -9,6 +9,9 @@
 - Chris Zeigler
 - Max Coursey
 
+<img width="1350" alt="Screen Shot 2019-10-13 at 5 10 43 PM" src="https://user-images.githubusercontent.com/50716272/66875032-ee9fa800-ef7a-11e9-8ecc-c871b3f8a876.png">
+
+
 ## Project Description
 ### Overview
 - Sports fan club website allowing personalized selection of sports teams & players. Once a user chooses a selection of teams from various sports
