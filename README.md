@@ -3,7 +3,7 @@
 
 ### Link to project: [Here](https://arcane-wildwood-00150.herokuapp.com/)
 
-## Group Orange Team Members
+## Team Members
 - Balwinder Singh
 - Coti Garcia
 - Chris Zeigler
